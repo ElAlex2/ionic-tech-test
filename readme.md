@@ -6,11 +6,10 @@ The favorites live on localStorage for the POC, but in real world, either we kee
 
 It has unit testing coverage of:
 
-=============================== Coverage summary ===============================
-Statements   : 88.28% ( 113/128 )
-Branches     : 47.61% ( 10/21 )
-Functions    : 93.33% ( 42/45 )
-Lines        : 87.5% ( 105/120 )
+- Statements   : 88.28% ( 113/128 )
+- Branches     : 47.61% ( 10/21 )
+- Functions    : 93.33% ( 42/45 )
+- Lines        : 87.5% ( 105/120 )
 
 # Installation
 
