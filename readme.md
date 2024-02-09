@@ -1,6 +1,6 @@
 # Technical Test Angular + Ionic
 
-As requested, the application is able to load (has infinite scrolling), TV Shows from the API.
+As requested, the application is able to load TV Shows from the API.
 
 When entering a TV show details page, it can be added to a list of favorites.
 
