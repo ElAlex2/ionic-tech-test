@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollCustomEvent, LoadingController, NavController } from '@ionic/angular';
 import { SeriesService } from 'src/app/services/series-service.service';
 import { Show } from 'src/app/services/types';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 
 
 @Component({
