@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>    
+    <ion-title>Favorite TV Shows</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" *ngFor="let tvShow of series">
+        <ion-card>
+          <ion-item lines="none" class="ion-align-items-start">
+            <ion-icon name="trash" slot="end" (click)="deleteTvShow(tvShow.id)"></ion-icon>
+            <img src="{{ tvShow?.image?.medium }}" alt="{{ tvShow.name }}" class="tv-show-image" (click)="showDetails(tvShow.id)">
+          </ion-item>
+          <ion-card-header>
+            <ion-card-title>{{ tvShow.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Rating: {{ tvShow?.rating?.average !== null ? tvShow?.rating?.average : 'N/A' }}</p>
+            <p>Genre: {{ tvShow.genres.join(', ') }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

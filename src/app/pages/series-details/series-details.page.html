@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ serie.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="serie !== null" class="ion-padding">
+  <ion-card>
+    <img [src]="serie.image.original" alt="{{ serie.name }}" *ngIf="serie.image">
+    <ion-card-header>
+      <ion-card-subtitle *ngIf="serie.genres && serie.genres.length > 0">{{ serie.genres.join(', ')
+        }}</ion-card-subtitle>
+      <ion-card-title>{{ serie.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p *ngIf="serie.summary" [innerHTML]="serie.summary"></p>
+      <ion-item *ngIf="serie.premiered">
+        <ion-label>Premiered</ion-label>
+        <ion-text>{{ serie.premiered | date: 'mediumDate' }}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="serie.ended">
+        <ion-label>Ended</ion-label>
+        <ion-text>{{ serie.ended | date: 'mediumDate' }}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="serie.network">
+        <ion-label>Network</ion-label>
+        <ion-text>{{ serie.network.name }}</ion-text>
+      </ion-item>
+      <ion-item *ngIf="serie.officialSite">
+        <ion-label>Official Site</ion-label>
+        <ion-text><a [href]="serie.officialSite" target="_blank">{{ serie.officialSite }}</a></ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-button (click)="addFavorite()">
+          Add To Favorites
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
